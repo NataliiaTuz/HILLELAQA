@@ -1,0 +1,10 @@
+name;x;y;z;size;figure
+Circle;;;;MEDIUM;true
+Rectangle;5;6;;SMALL;true
+Square;9;;;LARGE;true
+Triangle;9;11;;LARGE;true
+Parallelogram;;14;;LARGE;true
+Parallelogram;12;14;70;MEDIUM;true
+Rhombus;18;20;50;LARGE;true
+Ellipse;7;6;;SMALL;true
+
