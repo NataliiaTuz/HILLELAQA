@@ -17,6 +17,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Arrays;
+
 // READ DATA USING FILEREADER CLASS
 public class Main {
 
@@ -48,7 +49,7 @@ public class Main {
 
         extractedM();
     }
-
+//now 100 entries are using for load data
     private static void extractedM() {
         String[] data = readfileusingFileReader(FILE_NAME);
         System.out.println(Arrays.toString(data));
@@ -58,7 +59,7 @@ public class Main {
             Shapes shape = null;
             switch (pieces[2].toLowerCase()) {
                 case "Square":
-                    shape = new Square(pieces[0], Double.parseDouble(pieces[1]), Double.parseDouble(pieces[2]),pieces[3], Boolean.parseBoolean(pieces[5]));
+                    shape = new Square(pieces[0], Double.parseDouble(pieces[1]), Double.parseDouble(pieces[2]), pieces[3], Boolean.parseBoolean(pieces[5]));
                     break;
                 case "Rectangle":
                     shape = new Rectangle(pieces[0], Double.parseDouble(pieces[1]), Double.parseDouble(pieces[2]), pieces[3], Boolean.parseBoolean(pieces[5]));
@@ -74,13 +75,13 @@ public class Main {
                             Integer.parseInt(pieces[3]), pieces[4], Boolean.parseBoolean(pieces[5]));
                     break;
                 case "Rhombus":
-                    shape = new Rhombus(pieces[0], Double.parseDouble(pieces[1]), Double.parseDouble(pieces[2]),Integer.parseInt(pieces[3]),pieces[4],Boolean.parseBoolean(pieces[5]));
+                    shape = new Rhombus(pieces[0], Double.parseDouble(pieces[1]), Double.parseDouble(pieces[2]), Integer.parseInt(pieces[3]), pieces[4], Boolean.parseBoolean(pieces[5]));
                     break;
                 case "Ellipse":
-                    shape = new Ellipse(pieces[0], Double.parseDouble(pieces[1]), Double.parseDouble(pieces[2]),(pieces[3]),Boolean.parseBoolean(pieces[5]));
+                    shape = new Ellipse(pieces[0], Double.parseDouble(pieces[1]), Double.parseDouble(pieces[2]), (pieces[3]), Boolean.parseBoolean(pieces[5]));
                     break;
             }
-System.out.println(shape);
+            System.out.println(shape);
         }
     }
 }

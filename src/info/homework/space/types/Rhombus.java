@@ -42,7 +42,7 @@ public class Rhombus extends Shapes {
         double b = Math.toRadians(y);
         double area=y*y*(Math.sin(b));
         if (y <= 0)
-            System.out.println("Length should be positve");
+            System.out.println("Length should be positive");
         else
             System.out.println("Area of rhombus by angle = "+ area);
     }

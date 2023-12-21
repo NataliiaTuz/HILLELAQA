@@ -3,13 +3,13 @@ package info.homework.space.types;
 import info.homework.space.properties.ChangePosition;
 import info.homework.space.properties.RotatAble;
 
-public class Circle implements ChangePosition, RotatAble {
+public class Circle implements ChangePosition,
+        RotatAble {
     private double radius;
     private String name;
     private String isInheritance;
     private String locatedInTheSpace;
     private String type;
-
 
     public Circle(double radius, String name, String isInheritance, String locatedInTheSpace, String type) { //Replace constructor with builder
         this.radius = radius;
@@ -36,7 +36,7 @@ public class Circle implements ChangePosition, RotatAble {
     }
 
     @Override
-    public String toString() {  // Added method String concat(+) and super.toString()
+    public String toString() { // Added method String concat(+) and super.toString()
         return "Circle{" + "radius=" + radius + ", name='" + name + '\'' + ", isInheritance='" + isInheritance + '\'' + ", locatedInTheSpace='" + locatedInTheSpace + '\'' + ", type='" + type + '\'' + '}';
     }
 
@@ -44,5 +44,3 @@ public class Circle implements ChangePosition, RotatAble {
         System.out.println("radius:" + radius + "   name:" + name + "   isInheritance:" + isInheritance + "   locatedInTheSpace" + locatedInTheSpace + "   type:" + type);
     }
 }
-
-
