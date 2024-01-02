@@ -7,23 +7,12 @@ import info.homework.space.types.Rectangle;
 import info.homework.space.types.Rhombus;
 import info.homework.space.types.Square;
 import info.homework.space.types.Triangle;
-import info.homework.space.properties.CircleBuilder;
-import info.homework.space.types.Circle;
-import info.homework.space.types.Rectangle;
-import info.homework.space.types.Square;
-import info.homework.space.types.Triangle;
-
-import javax.swing.*;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 // READ DATA USING FILEREADER CLASS
 public class Main {
