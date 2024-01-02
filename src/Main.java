@@ -13,17 +13,24 @@ import info.homework.space.types.Rectangle;
 import info.homework.space.types.Square;
 import info.homework.space.types.Triangle;
 
+import javax.swing.*;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 // READ DATA USING FILEREADER CLASS
 public class Main {
 
     private static final String FILE_NAME = "resources/shapes.csv";
 
     static String[] readfileusingFileReader(String fileName) {
-        // ArrayList<String> data = new ArrayList<String>();
 
         var newline = System.lineSeparator();
         var strB = new StringBuffer();
@@ -50,37 +57,49 @@ public class Main {
     }
 
     private static void extractedM() {
+        List<Shapes> shapesList = new LinkedList<>();
         String[] data = readfileusingFileReader(FILE_NAME);
-        System.out.println(Arrays.toString(data));
+       // System.out.println(Arrays.toString(data));
 
         for (int i = 1; i < data.length; i++) {
             var pieces = data[i].split(";");
             Shapes shape = null;
             switch (pieces[2].toLowerCase()) {
                 case "Square":
-                    shape = new Square(pieces[0], Double.parseDouble(pieces[1]), Double.parseDouble(pieces[2]),pieces[3], Boolean.parseBoolean(pieces[5]));
+                    shape = new Square(Integer.parseInt(pieces[0]),pieces[1], Double.parseDouble(pieces[2]), Double.parseDouble(pieces[3]), pieces[4], Boolean.parseBoolean(pieces[6]));
                     break;
                 case "Rectangle":
-                    shape = new Rectangle(pieces[0], Double.parseDouble(pieces[1]), Double.parseDouble(pieces[2]), pieces[3], Boolean.parseBoolean(pieces[5]));
+                    shape = new Rectangle(Integer.parseInt(pieces[0]),pieces[1], Double.parseDouble(pieces[2]), Double.parseDouble(pieces[3]), pieces[4], Boolean.parseBoolean(pieces[6]));
                     break;
                 case "Triangle":
-                    shape = new Triangle(pieces[0], Double.parseDouble(pieces[1]), Double.parseDouble(pieces[2]), Double.parseDouble(pieces[3]), pieces[4], Boolean.parseBoolean(pieces[5]));
+                    shape = new Triangle(Integer.parseInt(pieces[0]),pieces[1], Double.parseDouble(pieces[2]), Double.parseDouble(pieces[3]), Double.parseDouble(pieces[4]), pieces[5], Boolean.parseBoolean(pieces[6]));
                     break;
                 case "Parallelogram":
-                    shape = new Parallelogram(pieces[0], Double.parseDouble(pieces[1]), Double.parseDouble(pieces[2]), Double.parseDouble(pieces[3]), pieces[4], Boolean.parseBoolean(pieces[5]));
+                    shape = new Parallelogram(Integer.parseInt(pieces[0]),pieces[1], Double.parseDouble(pieces[2]), Double.parseDouble(pieces[3]), Double.parseDouble(pieces[4]), pieces[5], Boolean.parseBoolean(pieces[6]));
                     break;
                 case "ParallelogramAngle":
-                    shape = new Parallelogram(pieces[0], Double.parseDouble(pieces[1]), Double.parseDouble(pieces[2]),
-                            Integer.parseInt(pieces[3]), pieces[4], Boolean.parseBoolean(pieces[5]));
+                    shape = new Parallelogram(Integer.parseInt(pieces[0]),pieces[1], Double.parseDouble(pieces[2]), Double.parseDouble(pieces[3]),
+                            Integer.parseInt(pieces[4]), pieces[5], Boolean.parseBoolean(pieces[6]));
                     break;
                 case "Rhombus":
-                    shape = new Rhombus(pieces[0], Double.parseDouble(pieces[1]), Double.parseDouble(pieces[2]),Integer.parseInt(pieces[3]),pieces[4],Boolean.parseBoolean(pieces[5]));
+                    shape = new Rhombus(Integer.parseInt(pieces[0]),pieces[1], Double.parseDouble(pieces[2]), Double.parseDouble(pieces[3]), Integer.parseInt(pieces[4]), pieces[5], Boolean.parseBoolean(pieces[6]));
                     break;
                 case "Ellipse":
-                    shape = new Ellipse(pieces[0], Double.parseDouble(pieces[1]), Double.parseDouble(pieces[2]),(pieces[3]),Boolean.parseBoolean(pieces[5]));
+                    shape = new Ellipse(Integer.parseInt(pieces[0]),pieces[1], Double.parseDouble(pieces[2]), Double.parseDouble(pieces[3]), (pieces[4]), Boolean.parseBoolean(pieces[6]));
                     break;
             }
-System.out.println(shape);
+           // System.out.println(shape);
         }
+
+int SortSkip=20;// пропускаю 20 значень
+        int SortOut=50;//виводжу 50 значень
+        shapesList.stream()// конвертую нашу колекцію в Stream
+                .sorted(Comparator.comparingDouble(Shapes::getWidth))//сортую нашу мапу за полем
+                .skip(SortSkip)
+                .limit(SortOut)
+                .collect(Collectors.toMap(Shapes::getId, Shapes::getName))//створюю мапу із ключом id та стрінговим полем Name
+                .forEach((key,value)->System.out.println("Key+"+key+"Value"+value));//виводжу на екран нашу мапу
+
+
     }
 }

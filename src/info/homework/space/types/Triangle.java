@@ -19,8 +19,8 @@ public class Triangle extends Shapes {
                 .toString();
     }
 
-    public Triangle(String name, double width, double height, double side3, String size, boolean figure) {
-        super(name, width, height, size, figure);
+    public Triangle(int id,String name, double width, double height, double side3, String size, boolean figure) {
+        super(id,name, width, height, size, figure);
         this.side3=side3;
 
     }

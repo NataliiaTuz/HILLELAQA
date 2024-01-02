@@ -10,8 +10,8 @@ public class Parallelogram extends Shapes {
     private int angle;
 
 
-    public Parallelogram(String name, double width, double height, double base, String size, boolean figure) {
-        super(name, width, height, size, figure);
+    public Parallelogram(int id,String name, double width, double height, double base, String size, boolean figure) {
+        super(id,name, width, height, size, figure);
         this.base=base;
     }
 
@@ -27,8 +27,8 @@ public class Parallelogram extends Shapes {
                 .toString();
     }
 
-    public Parallelogram(String name, double width, double height, int angle, String size, boolean figure) {
-        super(name, width, height, size, figure);
+    public Parallelogram(int id,String name, double width, double height, int angle, String size, boolean figure) {
+        super(id,name, width, height, size, figure);
         this.angle=angle;
     }
     public Parallelogram (double width, double height, int angle){

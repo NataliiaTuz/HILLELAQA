@@ -18,8 +18,8 @@ public class Rectangle extends Shapes {
                 .toString();
     }
 
-    public Rectangle(String name, double width, double height, String size, boolean figure) {
-        super(name, width, height, size, figure);
+    public Rectangle(int id,String name, double width, double height, String size, boolean figure) {
+        super(id,name, width, height, size, figure);
     }
     public Rectangle(double width, double height) {
         super(width, height);

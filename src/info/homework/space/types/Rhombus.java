@@ -26,8 +26,8 @@ public class Rhombus extends Shapes {
                 .toString();
     }
 
-    public Rhombus(String name, double width, double height,int angle,String size, boolean figure ) {
-        super(name, width, height, size, figure);
+    public Rhombus(int id,String name, double width, double height,int angle,String size, boolean figure ) {
+        super(id,name, width, height, size, figure);
         this.angle = angle;
     }
 

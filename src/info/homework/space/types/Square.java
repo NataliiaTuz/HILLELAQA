@@ -19,8 +19,8 @@ public class Square extends Shapes implements RotatAble {
                 .toString();
     }
 
-    public Square(String name, double width, double height, String size, boolean figure) {
-        super(name, width, height, size, figure);
+    public Square(int id,String name, double width, double height, String size, boolean figure) {
+        super(id,name, width, height, size, figure);
     }
 
     public Square(String size) {

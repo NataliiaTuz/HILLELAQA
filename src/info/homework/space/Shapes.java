@@ -1,5 +1,6 @@
 package info.homework.space;
 
+import java.util.Comparator;
 import java.util.StringJoiner;
 
 public abstract class Shapes { // change the class to abstract
@@ -8,19 +9,22 @@ public abstract class Shapes { // change the class to abstract
     protected double y;
     protected String size;
     private boolean figure;
+    private int id;
 
     @Override
     public String toString() {
         return new StringJoiner(", ", Shapes.class.getSimpleName() + "[", "]")
                 .add("name='" + name + "'")
-                .add("width=" + x)
-                .add("height=" + y)
+                .add("x=" + x)
+                .add("y=" + y)
                 .add("size='" + size + "'")
                 .add("figure=" + figure)
+                .add("id=" + id)
                 .toString();
     }
 
-    public Shapes(String name, double width, double height, String size, boolean figure) {
+    public Shapes(int id,String name, double width, double height, String size, boolean figure) {
+        this.id=id;
         this.size = size;
         this.x = width;
         this.y = height;
@@ -34,6 +38,14 @@ public abstract class Shapes { // change the class to abstract
     public Shapes(double width, double height) {
         this.x = width;
         this.y = height;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     abstract public void calculateArea(); // change the method to abstract
@@ -81,6 +93,7 @@ public abstract class Shapes { // change the class to abstract
     public void setFigure(boolean figure) {
         this.figure = figure;
     }
+
 }
 
 

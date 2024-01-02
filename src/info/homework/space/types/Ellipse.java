@@ -19,8 +19,8 @@ public class Ellipse extends Shapes {
                 .toString();
     }
 
-    public Ellipse(String name, double width, double height, String size, boolean figure) {
-        super(name, width, height, size, figure);
+    public Ellipse(int id,String name, double width, double height, String size, boolean figure) {
+        super(id,name, width, height, size, figure);
     }
 
     @Override
