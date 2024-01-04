@@ -7,18 +7,33 @@ import info.homework.space.properties.Size;
 import java.util.StringJoiner;
 
 public class Rectangle extends Shapes {
+private double side3;
 
     @Override
     public String toString() {
         return new StringJoiner(", ", Rectangle.class.getSimpleName() + "[", "]")
+                .add("side3=" + side3)
                 .add("name='" + name + "'")
-                .add("width=" + y)
-                .add("height=" + x)
+                .add("x=" + x)
+                .add("y=" + y)
                 .add("size='" + size + "'")
                 .toString();
     }
 
-    public Rectangle(int id,String name, double width, double height, String size, boolean figure) {
+    public double getSide3() {
+        return side3;
+    }
+
+    public void setSide3(double side3) {
+        this.side3 = side3;
+    }
+
+    public Rectangle(int id, String name, double width, double height, double side3,String size, boolean figure) {
+        super(id, name, width, height, size, figure);
+        this.side3 = side3;
+    }
+
+    public Rectangle(int id, String name, double width, double height, String size, boolean figure) {
         super(id,name, width, height, size, figure);
     }
     public Rectangle(double width, double height) {

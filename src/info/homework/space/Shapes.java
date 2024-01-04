@@ -23,7 +23,23 @@ public abstract class Shapes { // change the class to abstract
                 .toString();
     }
 
-    public Shapes(int id,String name, double width, double height, String size, boolean figure) {
+    public double getX() {
+        return x;
+    }
+
+    public void setX(double x) {
+        this.x = x;
+    }
+
+    public double getY() {
+        return y;
+    }
+
+    public void setY(double y) {
+        this.y = y;
+    }
+
+    public Shapes(int id, String name, double width, double height, String size, boolean figure) {
         this.id=id;
         this.size = size;
         this.x = width;

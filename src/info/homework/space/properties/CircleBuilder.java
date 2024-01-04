@@ -10,6 +10,7 @@ public class CircleBuilder {
     private String isInheritance;
     private String locatedInTheSpace;
     private String type;
+    private int id;
 
     public CircleBuilder setRadius(double radius) {
         this.radius = radius;
@@ -42,6 +43,6 @@ public class CircleBuilder {
     }
 
     public Circle createCircle() {
-        return new Circle(radius, name, isInheritance, locatedInTheSpace, type);
+        return new Circle( id,name,radius, isInheritance, locatedInTheSpace, type);
     }
 }

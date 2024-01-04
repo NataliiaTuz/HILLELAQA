@@ -2,6 +2,7 @@ package info.homework.space.types;
 
 import info.homework.space.properties.ChangePosition;
 import info.homework.space.properties.RotatAble;
+import info.homework.space.properties.Size;
 
 public class Circle implements ChangePosition, RotatAble {
     private double radius;
@@ -9,9 +10,11 @@ public class Circle implements ChangePosition, RotatAble {
     private String isInheritance;
     private String locatedInTheSpace;
     private String type;
+private int id;
 
 
-    public Circle(double radius, String name, String isInheritance, String locatedInTheSpace, String type) { //Replace constructor with builder
+    public Circle(int id, String name,double radius, String isInheritance, String locatedInTheSpace, String type) { //Replace constructor with builder
+        this.id=id;
         this.radius = radius;
         this.name = name;
         this.isInheritance = isInheritance;

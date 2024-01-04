@@ -9,17 +9,21 @@ import info.homework.space.types.Square;
 import info.homework.space.types.Triangle;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 // READ DATA USING FILEREADER CLASS
 public class Main {
 
-    private static final String FILE_NAME = "resources/shapes.csv";
+    private static final String FILE_NAME = "resources/shapes1.csv";
 
     static String[] readfileusingFileReader(String fileName) {
+
 
         var newline = System.lineSeparator();
         var strB = new StringBuffer();
@@ -48,47 +52,54 @@ public class Main {
     private static void extractedM() {
         List<Shapes> shapesList = new LinkedList<>();
         String[] data = readfileusingFileReader(FILE_NAME);
-       // System.out.println(Arrays.toString(data));
+        System.out.println(data);
 
         for (int i = 1; i < data.length; i++) {
             var pieces = data[i].split(";");
             Shapes shape = null;
-            switch (pieces[2].toLowerCase()) {
+            switch (pieces[5].toLowerCase()) {
                 case "Square":
-                    shape = new Square(Integer.parseInt(pieces[0]),pieces[1], Double.parseDouble(pieces[2]), Double.parseDouble(pieces[3]), pieces[4], Boolean.parseBoolean(pieces[6]));
-                    break;
-                case "Rectangle":
-                    shape = new Rectangle(Integer.parseInt(pieces[0]),pieces[1], Double.parseDouble(pieces[2]), Double.parseDouble(pieces[3]), pieces[4], Boolean.parseBoolean(pieces[6]));
-                    break;
-                case "Triangle":
-                    shape = new Triangle(Integer.parseInt(pieces[0]),pieces[1], Double.parseDouble(pieces[2]), Double.parseDouble(pieces[3]), Double.parseDouble(pieces[4]), pieces[5], Boolean.parseBoolean(pieces[6]));
-                    break;
-                case "Parallelogram":
-                    shape = new Parallelogram(Integer.parseInt(pieces[0]),pieces[1], Double.parseDouble(pieces[2]), Double.parseDouble(pieces[3]), Double.parseDouble(pieces[4]), pieces[5], Boolean.parseBoolean(pieces[6]));
-                    break;
-                case "ParallelogramAngle":
-                    shape = new Parallelogram(Integer.parseInt(pieces[0]),pieces[1], Double.parseDouble(pieces[2]), Double.parseDouble(pieces[3]),
-                            Integer.parseInt(pieces[4]), pieces[5], Boolean.parseBoolean(pieces[6]));
-                    break;
-                case "Rhombus":
-                    shape = new Rhombus(Integer.parseInt(pieces[0]),pieces[1], Double.parseDouble(pieces[2]), Double.parseDouble(pieces[3]), Integer.parseInt(pieces[4]), pieces[5], Boolean.parseBoolean(pieces[6]));
-                    break;
-                case "Ellipse":
-                    shape = new Ellipse(Integer.parseInt(pieces[0]),pieces[1], Double.parseDouble(pieces[2]), Double.parseDouble(pieces[3]), (pieces[4]), Boolean.parseBoolean(pieces[6]));
-                    break;
-            }
-           // System.out.println(shape);
-        }
+                    shape = new Square(Integer.parseInt(pieces[0]),pieces[1],Double.parseDouble(pieces[2]),Double.parseDouble(pieces[3]),Double.parseDouble(pieces[4]),pieces[5],Boolean.parseBoolean(pieces[6]));
+                break;
 
-int SortSkip=20;// пропускаю 20 значень
-        int SortOut=50;//виводжу 50 значень
-        shapesList.stream()// конвертую нашу колекцію в Stream
-                .sorted(Comparator.comparingDouble(Shapes::getWidth))//сортую нашу мапу за полем
-                .skip(SortSkip)
-                .limit(SortOut)
-                .collect(Collectors.toMap(Shapes::getId, Shapes::getName))//створюю мапу із ключом id та стрінговим полем Name
-                .forEach((key,value)->System.out.println("Key+"+key+"Value"+value));//виводжу на екран нашу мапу
+                case "Rectangle":
+                    shape = new Rectangle(Integer.parseInt(pieces[0]),pieces[1],Double.parseDouble(pieces[2]),Double.parseDouble(pieces[3]),Double.parseDouble(pieces[4]),pieces[5],Boolean.parseBoolean(pieces[6]));
+                    break;
+//                case "Triangle":
+//                    shape = new Triangle(Integer.parseInt(pieces[0]),pieces[1], Double.parseDouble(pieces[2]), Double.parseDouble(pieces[3]), Double.parseDouble(pieces[4]), pieces[5], Boolean.parseBoolean(pieces[6]));
+//                    break;
+//                case "Parallelogram":
+//                    shape = new Parallelogram(Integer.parseInt(pieces[0]),pieces[1], Double.parseDouble(pieces[2]), Double.parseDouble(pieces[3]), Double.parseDouble(pieces[4]), pieces[5], Boolean.parseBoolean(pieces[6]));
+//                    break;
+//                case "ParallelogramAngle":
+//                    shape = new Parallelogram(Integer.parseInt(pieces[0]),pieces[1], Double.parseDouble(pieces[2]), Double.parseDouble(pieces[3]),
+//                            Integer.parseInt(pieces[4]), pieces[5], Boolean.parseBoolean(pieces[6]));
+//                    break;
+//                case "Rhombus":
+//                    shape = new Rhombus(Integer.parseInt(pieces[0]),pieces[1], Double.parseDouble(pieces[2]), Double.parseDouble(pieces[3]), Integer.parseInt(pieces[4]), pieces[5], Boolean.parseBoolean(pieces[6]));
+//                    break;
+//                case "Ellipse":
+//                    shape = new Ellipse(Integer.parseInt(pieces[0]),pieces[1], Double.parseDouble(pieces[2]), Double.parseDouble(pieces[3]), (pieces[4]), Boolean.parseBoolean(pieces[6]));
+//                    break;
+            }
+           // System.out.println("Shape"+shape);
+//        }
+
+
+//        Stream<Shapes>stream=shapesList.stream();
+//int SortSkip=20;// пропускаю 20 значень
+//        int SortOut=50;//виводжу 50 значень
+//        System.out.println(stream.max((d1, d2) -> (int) (d1.getWidth() *100 - d2.getWidth()*100)));
+//        shapesList.stream()// конвертую нашу колекцію в Stream
+//                .sorted((d1, d2) -> (int) (d1.getWidth() *100 - d2.getWidth()*100))
+//                //.sorted(Comparator.comparingDouble(Shapes::getWidth))//сортую нашу мапу за полем
+//                .skip(SortSkip)
+//                .limit(SortOut)
+//               .collect(Collectors.toMap(Shapes::getId, Shapes::getName))//створюю мапу із ключом id та стрінговим полем Name
+//        .forEach((key,value)->System.out.println("Key+"+key+"Value"+value));//виводжу на екран нашу мапу
+
+
 
 
     }
-}
+}}

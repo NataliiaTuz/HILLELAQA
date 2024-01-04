@@ -8,19 +8,30 @@ import info.homework.space.properties.Size;
 import java.util.StringJoiner;
 
 public class Square extends Shapes implements RotatAble {
+private double side3;
 
     @Override
     public String toString() {
         return new StringJoiner(", ", Square.class.getSimpleName() + "[", "]")
+                .add("side3=" + side3)
                 .add("name='" + name + "'")
-                .add("width=" + x)
-                .add("height=" + y)
+                .add("x=" + x)
+                .add("y=" + y)
                 .add("size='" + size + "'")
                 .toString();
     }
 
-    public Square(int id,String name, double width, double height, String size, boolean figure) {
+    public double getSide3() {
+        return side3;
+    }
+
+    public void setSide3(double side3) {
+        this.side3 = side3;
+    }
+
+    public Square(int id, String name, double width, double height, double side3, String size, boolean figure) {
         super(id,name, width, height, size, figure);
+        this.side3=side3;
     }
 
     public Square(String size) {
