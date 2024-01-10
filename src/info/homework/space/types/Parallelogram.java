@@ -8,21 +8,27 @@ import java.util.StringJoiner;
 public class Parallelogram extends Shapes {
     private double base;
     private int angle;
+    private double side3=angle;
 
-
-    public Parallelogram(int id,String name, double width, double height, double base, String size, boolean figure) {
-        super(id,name, width, height, size, figure);
-        this.base=base;
+    public double getSide3() {
+        return side3;
     }
+
+    public void setSide3(double side3) {
+        this.side3 = side3;
+    }
+
+
 
     @Override
     public String toString() {
         return new StringJoiner(", ", Parallelogram.class.getSimpleName() + "[", "]")
                 .add("base=" + base)
                 .add("angle=" + angle)
+                .add("side3=" + side3)
                 .add("name='" + name + "'")
-                .add("width=" + x)
-                .add("height=" + y)
+                .add("x=" + x)
+                .add("y=" + y)
                 .add("size='" + size + "'")
                 .toString();
     }
@@ -30,6 +36,13 @@ public class Parallelogram extends Shapes {
     public Parallelogram(int id,String name, double width, double height, int angle, String size, boolean figure) {
         super(id,name, width, height, size, figure);
         this.angle=angle;
+    }
+
+    public Parallelogram(int id,String name, double width, double height, double side3, String size, boolean figure) {
+
+        super(id,name, width, height, size, figure);
+        this.side3=side3;
+
     }
     public Parallelogram (double width, double height, int angle){
         super(width, height);

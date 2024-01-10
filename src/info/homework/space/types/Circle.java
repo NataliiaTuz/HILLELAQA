@@ -10,7 +10,18 @@ public class Circle implements ChangePosition, RotatAble {
     private String isInheritance;
     private String locatedInTheSpace;
     private String type;
-private int id;
+    private double side3;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    private int id;
+
 
 
     public Circle(int id, String name,double radius, String isInheritance, String locatedInTheSpace, String type) { //Replace constructor with builder
@@ -20,6 +31,21 @@ private int id;
         this.isInheritance = isInheritance;
         this.locatedInTheSpace = locatedInTheSpace;
         this.type = type;
+    }
+
+    public Circle(int id, String name, double radius, String type ) {
+        this.radius = radius;
+        this.name = name;
+        this.type = type;
+        this.id = id;
+    }
+
+    public double getSide3() {
+        return side3;
+    }
+
+    public void setSide3(double side3) {
+        this.side3 = side3;
     }
 
     @Override

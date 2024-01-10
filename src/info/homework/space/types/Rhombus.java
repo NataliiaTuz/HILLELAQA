@@ -7,8 +7,15 @@ import java.util.StringJoiner;
 public class Rhombus extends Shapes {
     private double radius;
     private int angle;
+private double side3=angle;
 
+    public double getSide3() {
+        return side3;
+    }
 
+    public void setSide3(double side3) {
+        this.side3 = side3;
+    }
 
     public Rhombus(double width, double height) {
         super(width, height);
@@ -19,6 +26,7 @@ public class Rhombus extends Shapes {
         return new StringJoiner(", ", Rhombus.class.getSimpleName() + "[", "]")
                 .add("radius=" + radius)
                 .add("angle=" + angle)
+                .add("side3=" + side3)
                 .add("name='" + name + "'")
                 .add("x=" + x)
                 .add("y=" + y)
@@ -30,6 +38,10 @@ public class Rhombus extends Shapes {
         super(id,name, width, height, size, figure);
         this.angle = angle;
     }
+    public Rhombus(int id,String name, double width, double height, double side3,String size, boolean figure ) {
+        super(id,name, width, height, size, figure);
+       this.side3=side3;
+    }
 
     @Override
     public void calculateArea() {
@@ -40,7 +52,7 @@ public class Rhombus extends Shapes {
 
     public void calculateAreaByAngle() {
         double b = Math.toRadians(y);
-        double area=y*y*(Math.sin(b));
+        double area=y*y*(Math.sin(angle));
         if (y <= 0)
             System.out.println("Length should be positve");
         else

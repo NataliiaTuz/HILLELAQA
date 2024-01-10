@@ -45,7 +45,7 @@ private double side3;
 
     @Override
     public void calculateArea() {
-        double S = x * y;
+        double S = x * x;
         System.out.println("Area of square is: " + S);
     }
 
