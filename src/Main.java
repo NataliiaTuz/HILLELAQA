@@ -56,9 +56,9 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
         List<Shapes> shapesList = new LinkedList<Shapes>();
-        var startImport=System.currentTimeMillis();//creating variable for detecting time import CSV file
+        var startImport = System.currentTimeMillis();//creating variable for detecting time import CSV file
         String[] data = readFileUsingScanner(FILE_NAME);
-        var resultImport = System.currentTimeMillis()-startImport;
+        var resultImport = System.currentTimeMillis() - startImport;
         System.out.println("Time of Import CSV file: " + resultImport + "mls");
         System.out.println("*********************************************************");
         //     System.out.println((Arrays.toString(data)));//temprorary make invivible
@@ -67,7 +67,7 @@ public class Main {
         var startCreateObj = System.currentTimeMillis();// creating variable for detecting time of creating Objects
         createShapetObjects(data, shapesList);
 
-        var resultCreateObj = System.currentTimeMillis()-startCreateObj;
+        var resultCreateObj = System.currentTimeMillis() - startCreateObj;
         System.out.println("Time of creating object" + resultCreateObj + "mls");
         System.out.println("*********************************************************");
 
@@ -102,10 +102,9 @@ public class Main {
         // PRINT THE MAP OUTPUT
         System.out.println("Representation Map:");
         representMap.forEach((key, value) -> System.out.println("ID: " + key + ",Shape Name: " + value));
-        var resultSF = System.currentTimeMillis()-startFS;
+        var resultSF = System.currentTimeMillis() - startFS;
         System.out.println("Time of creating 3 stream objects and sorting/filtering functionality: " + resultSF + "mls");
         System.out.println("*********************************************************");
-
 
 
         //CREATING 2 OBJECT DATE TYPE FOR COMPARING THE DIFFERENCE BETWEEN THESE DAYS
@@ -168,7 +167,7 @@ public class Main {
             System.out.println("We have the following shape:  " + shape);
         }
     }
-   //CREATING METHOD
+    //CREATING METHOD
 //    public void date (){
 //        var date1=new Date(2023,12,1); //Creating object date type
 //        System.out.println(date1);
