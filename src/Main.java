@@ -118,14 +118,14 @@ public class Main {
 
 
 //Sorting the duration by ASC
-            long[] durations = {resultImport, resultCreateObj, resultSF};
-            Arrays.sort(durations);
-            System.out.println("*********************************************************");
-            System.out.println("Durations in Ascending Order:");
-            System.out.println("1. Import CSV file: " + durations[0] + "ms");
-            System.out.println("2. Creating Objects: " + durations[1] + "ms");
-            System.out.println("3. Sorting/Filtering: " + durations[2] + "ms");
-            System.out.println("*********************************************************");
+        long[] durations = {resultImport, resultCreateObj, resultSF};
+        Arrays.sort(durations);
+        System.out.println("*********************************************************");
+        System.out.println("Durations in Ascending Order:");
+        System.out.println("1. Import CSV file: " + durations[0] + "ms");
+        System.out.println("2. Creating Objects: " + durations[1] + "ms");
+        System.out.println("3. Sorting/Filtering: " + durations[2] + "ms");
+        System.out.println("*********************************************************");
 
     }
 
