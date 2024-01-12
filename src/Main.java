@@ -59,7 +59,7 @@ public class Main {
         var startImport = System.currentTimeMillis();//creating variable for detecting time import CSV file
         String[] data = readFileUsingScanner(FILE_NAME);
         var resultImport = System.currentTimeMillis() - startImport;
-        System.out.println("Time of Import CSV file: " + resultImport + "mls");
+        System.out.println("Time of Import CSV file: " + resultImport + "ms");
         System.out.println("*********************************************************");
         //     System.out.println((Arrays.toString(data)));//temprorary make invivible
 
@@ -68,7 +68,7 @@ public class Main {
         createShapetObjects(data, shapesList);
 
         var resultCreateObj = System.currentTimeMillis() - startCreateObj;
-        System.out.println("Time of creating object" + resultCreateObj + "mls");
+        System.out.println("Time of creating object" + resultCreateObj + "ms");
         System.out.println("*********************************************************");
 
         // SORTING AND FILTERING & ACTIONS WITH STREAMS
@@ -103,7 +103,7 @@ public class Main {
         System.out.println("Representation Map:");
         representMap.forEach((key, value) -> System.out.println("ID: " + key + ",Shape Name: " + value));
         var resultSF = System.currentTimeMillis() - startFS;
-        System.out.println("Time of creating 3 stream objects and sorting/filtering functionality: " + resultSF + "mls");
+        System.out.println("Time of creating 3 stream objects and sorting/filtering functionality: " + resultSF + "ms");
         System.out.println("*********************************************************");
 
 
@@ -112,9 +112,20 @@ public class Main {
         var dateBefore = new Date(2023 - 1900, 10, 20, 7, 20, 45);// CREATING OBJECT date2 Mon Nov 20 07:20:45 CET 2023
         System.out.println(dateBefore);//
         var dateAfter = new Date(2024 - 1900, 2, 10, 7, 15, 25);//creating object date3 Sun Mar 10 07:15:25 CET 2024
-        long differenceInMillis = dateAfter.getTime() - dateBefore.getTime();//calculate the difference in mls
+        long differenceInMillis = dateBefore.getTime() - dateAfter.getTime();//calculate the difference in mls
         long differenceIndDays = (differenceInMillis / (24 * 60 * 60 * 1000)); // calculate the difference in days
-        System.out.println("Difference between both dates Mar 10 07:15:25 CET 2024 AND Nov 20 07:20:45 CET 2023 = " + differenceIndDays + " days");
+        System.out.println("Difference between both dates Nov 20 07:20:45 CET 2023 AND Mar 10 07:15:25 CET 2024   = " + differenceIndDays + " days");
+
+
+//Sorting the duration by ASC
+            long[] durations = {resultImport, resultCreateObj, resultSF};
+            Arrays.sort(durations);
+            System.out.println("*********************************************************");
+            System.out.println("Durations in Ascending Order:");
+            System.out.println("1. Import CSV file: " + durations[0] + "ms");
+            System.out.println("2. Creating Objects: " + durations[1] + "ms");
+            System.out.println("3. Sorting/Filtering: " + durations[2] + "ms");
+            System.out.println("*********************************************************");
 
     }
 
